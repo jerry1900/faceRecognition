@@ -1,0 +1,2 @@
+# faceRecognition
+利用opencv自带模型和cnn两种方式进行面部特征训练，利用摄像头抓取面部特征并进行识别
