@@ -41,17 +41,17 @@ class Model(object):
                 padding='same'
             )
         )
-        # self.model.add(Dropout(0.5))
+        
 
         self.model.add(Convolution2D(filters=64, kernel_size=(5, 5), padding='same'))
         self.model.add(Activation('relu'))
         self.model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2), padding='same'))
-        # self.model.add(Dropout(0.25))
+        
 
         self.model.add(Flatten())
         self.model.add(Dense(512))
         self.model.add(Activation('relu'))
-        # self.model.add(Dropout(0.25))
+        
 
         self.model.add(Dense(self.dataset.num_classes))
         self.model.add(Activation('softmax'))
@@ -82,7 +82,7 @@ class Model(object):
         print('Model Loaded.')
         self.model = load_model(file_path)
 
-    #需要确保输入的img得是灰化之后（channel =1 )且 大小为64*64的人脸图片
+    #需要确保输入的img得是灰化之后（channel =1 )且 大小为IMAGE_SIZE的人脸图片
     def predict(self,img):
         img = img.reshape((1, 1, self.IMAGE_SIZE, self.IMAGE_SIZE))
         img = img.astype('float32')
