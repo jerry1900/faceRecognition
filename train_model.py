@@ -61,7 +61,7 @@ class Model(object):
     def train_model(self):
         self.model.compile(
             optimizer='adam',  #有很多可选的optimizer，例如RMSprop,Adagrad，你也可以试试哪个好，我个人感觉差异不大
-            loss='categorical_crossentropy',  #你可以选用categorical_crossentropy作为loss看看哪个好
+            loss='categorical_crossentropy',  #你可以选用squared_hinge作为loss看看哪个好
             metrics=['accuracy'])
 
         #epochs、batch_size为可调的参数，epochs为训练多少轮、batch_size为每次训练多少个样本
