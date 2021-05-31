@@ -102,6 +102,7 @@ if __name__ == '__main__':
     model.train_model()
     model.evaluate_model()
     model.save()
+    model.save()
 
 
 
